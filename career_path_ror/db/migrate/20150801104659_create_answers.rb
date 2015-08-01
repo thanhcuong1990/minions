@@ -1,10 +1,11 @@
 class CreateAnswers < ActiveRecord::Migration
   def up
     create_table :answers do |t|
-      t.string :user_id
-      t.text :results, array: true, default: []
+      t.integer :user_id
+      t.string :results, :default => []
       t.timestamps
     end
+    add_index :answers, :user_id
   end
 
   def down
