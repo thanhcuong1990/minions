@@ -14,7 +14,6 @@ class AnswerCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        self.accessoryType = UITableViewCellAccessoryType.None
         self.layer.addBottomLine(UIColor(rgba: "#e2e2e2"), width: 1)
     }
 
