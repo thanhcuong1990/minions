@@ -6,5 +6,11 @@
   Copyright (c) 2015 Minions. All rights reserved.
 */
 
-"name" = "Name";
+"name" = "Họ và tên";
 "email" = "Email";
+"language" = "Ngôn ngữ";
+"error_title" = "Lỗi";
+"register_error_message" = "Họ tên hoặc email của bạn không hợp lệ.";
+"ok" = "Đồng ý";
+"register" = "Đăng ký";
+"introduction" = "Hướng dẫn";

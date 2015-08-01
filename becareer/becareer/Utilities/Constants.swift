@@ -12,7 +12,7 @@ import UIKit
 // MARK: Storyboard
 struct Storyboard {
     static let Register     = "Register"
-    static let Introduction = "Introduciton"
+    static let Introduction = "Introduction"
     static let Questions    = "Questions"
     static let Result       = "Result"
     static let Suggestion   = "Suggestion"

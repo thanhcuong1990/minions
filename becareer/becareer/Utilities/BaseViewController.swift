@@ -21,19 +21,31 @@ class BaseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func setUpNextButton(){
+}
+
+//MARK: Private
+
+extension BaseViewController{
+    func setUpBackButton(){
+        var cgrNavigationBar = self.navigationController?.navigationBar.frame.size;
+        var btnLeft = UIButton(frame: CGRectMake(0, cgrNavigationBar!.height/10, cgrNavigationBar!.width/10, cgrNavigationBar!.height/1.5))
+        btnLeft.imageEdgeInsets = UIEdgeInsets(top: -2.5, left: 0, bottom: 2.5, right: 0)
+        btnLeft.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        btnLeft.setImage(UIImage(named: "back"), forState: .Normal)
+        btnLeft.setImage(UIImage(named: "back_white"), forState: .Highlighted)
+        btnLeft.addTarget(self, action: "popViewController:", forControlEvents: .TouchUpInside)
+        var bbiLeft = UIBarButtonItem(customView: btnLeft)
         
+        self.navigationItem.leftBarButtonItems = [self.negativeBarButton(-10),bbiLeft]
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func negativeBarButton(negative:CGFloat) -> UIBarButtonItem{
+        var bbiNegativeSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
+        bbiNegativeSpace.width = negative
+        return bbiNegativeSpace
     }
-    */
-
+    
+    func popViewController(sender:AnyObject){
+        self.navigationController?.popViewControllerAnimated(true)
+    }
 }
