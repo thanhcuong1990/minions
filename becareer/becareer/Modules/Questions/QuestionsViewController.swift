@@ -64,7 +64,7 @@ class QuestionsViewController: BaseViewController {
         if(self.arrAnswer.count == self.iCurrentQuestion + 1){
             self.iCurrentQuestion++
             self.navigationItem.title = NSLocalizedString("questions", comment: "").stringByAppendingString(" \(iCurrentQuestion + 1)")
-            if(self.iCurrentQuestion < self.arrQuestion.count - 1){
+            if(self.iCurrentQuestion <= self.arrQuestion.count - 1){
                 self.tvQuestion?.text = (self.arrQuestion[self.iCurrentQuestion] as NSDictionary).objectForKey("content") as! String
                 self.tbvAnswers?.reloadData()
                 self.vWrap?.layer.addPushRightAnimation()
