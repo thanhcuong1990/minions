@@ -12,8 +12,8 @@ class QustionsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpBackButton()
         self.setUpNextButton()
+        self.navigationItem.hidesBackButton = true
         
         self.navigationItem.title = NSLocalizedString("questions", comment: "")
     }

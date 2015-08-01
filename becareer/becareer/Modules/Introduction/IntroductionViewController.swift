@@ -13,10 +13,14 @@ class IntroductionViewController: BaseViewController {
     @IBOutlet weak var tvDescription: UITextView?
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpBackButton()
         self.setUpNextButton()
+        self.navigationItem.hidesBackButton = true
         
         self.navigationItem.title = NSLocalizedString("introduction", comment: "")
+        var style = NSMutableParagraphStyle()
+        style.lineSpacing = 8
+        let attributes = [NSParagraphStyleAttributeName : style, NSFontAttributeName:UIFont.systemFontOfSize(15)]
+        self.tvDescription?.attributedText = NSAttributedString(string: NSLocalizedString("introduction_description", comment: ""), attributes:attributes)
     }
 
     override func didReceiveMemoryWarning() {
