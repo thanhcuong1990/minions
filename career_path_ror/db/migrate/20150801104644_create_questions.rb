@@ -11,6 +11,9 @@ class CreateQuestions < ActiveRecord::Migration
       t.integer :personality_id
       t.timestamps
     end
+
+    add_index :questions, :content,                unique: true
+    add_index :personality_types, :name,           unique: true
   end
 
   def down
