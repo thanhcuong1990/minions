@@ -52,9 +52,13 @@ class RegisterViewController: BaseViewController {
 //MARK: Private
 extension RegisterViewController{
     func goToIntroduction(){
-        APP_DELEGATE.uCurrentUser = User(name: self.tfName!.text!, email: self.tfEmail!.text!)
-        let vcIntroduction = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Introduction) as! IntroductionViewController
-        self.navigationController?.pushViewController(vcIntroduction, animated: true)
+        APIClient.sharedInstance.register(self.tfName!.text!, email: self.tfEmail!.text!) { (responseObj) -> () in
+            APP_DELEGATE.uCurrentUser = responseObj
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                let vcIntroduction = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Introduction) as! IntroductionViewController
+                self.navigationController?.pushViewController(vcIntroduction, animated: true)
+            })
+        }
     }
 }
 

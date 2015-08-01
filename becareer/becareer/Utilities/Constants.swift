@@ -9,6 +9,13 @@
 import Foundation
 import UIKit
 
+// MARK: URL
+let BaseUrl = "http://belifeu.com/api/v1"
+
+struct URL{
+    static let Register = "/sessions"
+}
+
 // MARK: Storyboard
 struct Storyboard {
     static let Register     = "Register"
