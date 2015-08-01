@@ -10,6 +10,7 @@ import UIKit
 
 class WebViewController: BaseViewController {
 
+    var sUrl:String?
     override func viewDidLoad() {
         super.viewDidLoad()
 

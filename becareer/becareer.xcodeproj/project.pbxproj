@@ -36,6 +36,8 @@
 		6FDAF4381B6D0A8A00741752 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAF4371B6D0A8A00741752 /* UIImageExtension.swift */; };
 		6FDAF43C1B6D165100741752 /* MajorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAF43A1B6D165100741752 /* MajorCell.swift */; };
 		6FDAF43D1B6D165100741752 /* MajorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FDAF43B1B6D165100741752 /* MajorCell.xib */; };
+		6FDAF4411B6D1D5200741752 /* UniversityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAF43F1B6D1D5200741752 /* UniversityCell.swift */; };
+		6FDAF4421B6D1D5200741752 /* UniversityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FDAF4401B6D1D5200741752 /* UniversityCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		6FDAF4371B6D0A8A00741752 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		6FDAF43A1B6D165100741752 /* MajorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorCell.swift; sourceTree = "<group>"; };
 		6FDAF43B1B6D165100741752 /* MajorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MajorCell.xib; sourceTree = "<group>"; };
+		6FDAF43F1B6D1D5200741752 /* UniversityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityCell.swift; sourceTree = "<group>"; };
+		6FDAF4401B6D1D5200741752 /* UniversityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UniversityCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -262,6 +266,7 @@
 		6FDAF40B1B6C7E5A00741752 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6FDAF43E1B6D1D1700741752 /* UniversityCell */,
 				6FDAF4391B6D160B00741752 /* MajorCell */,
 				6FDAF42E1B6CD33900741752 /* AnswerCell */,
 			);
@@ -284,6 +289,15 @@
 				6FDAF43B1B6D165100741752 /* MajorCell.xib */,
 			);
 			path = MajorCell;
+			sourceTree = "<group>";
+		};
+		6FDAF43E1B6D1D1700741752 /* UniversityCell */ = {
+			isa = PBXGroup;
+			children = (
+				6FDAF43F1B6D1D5200741752 /* UniversityCell.swift */,
+				6FDAF4401B6D1D5200741752 /* UniversityCell.xib */,
+			);
+			path = UniversityCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +369,7 @@
 				6FDAF4211B6C83FA00741752 /* Localizable.strings in Resources */,
 				6FDAF40C1B6C7E5A00741752 /* Introduction.storyboard in Resources */,
 				6FDAF4101B6C7E5A00741752 /* Register.storyboard in Resources */,
+				6FDAF4421B6D1D5200741752 /* UniversityCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -384,6 +399,7 @@
 				6FDAF4131B6C7E5A00741752 /* ResultViewController.swift in Sources */,
 				6FDAF41A1B6C7E5A00741752 /* Constants.swift in Sources */,
 				6FDAF4171B6C7E5A00741752 /* HelperManager.swift in Sources */,
+				6FDAF4411B6D1D5200741752 /* UniversityCell.swift in Sources */,
 				6FDAF4231B6C991A00741752 /* CALayerExtension.swift in Sources */,
 				6FDAF40F1B6C7E5A00741752 /* QuestionsViewController.swift in Sources */,
 				6FDAF4151B6C7E5A00741752 /* SuggestionViewController.swift in Sources */,
