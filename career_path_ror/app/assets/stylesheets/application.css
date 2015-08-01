@@ -13,3 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
+body {
+  background-color: #B4EC51;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  position: relative;
+}
+
+.welcome {
+  color: black;
+}
+
+.welcome-img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  margin: 100px 0px 0px -100px;
+}

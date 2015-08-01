@@ -1,5 +1,7 @@
 deploy.rb
 server.pid
+.log
+.cache
 
 ### OSX ###
 .DS_Store
