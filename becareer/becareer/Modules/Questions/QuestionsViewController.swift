@@ -14,8 +14,8 @@ class QuestionsViewController: BaseViewController {
     @IBOutlet weak var tvQuestion: UITextView?
     @IBOutlet weak var tbvAnswers: UITableView?
     
-    var arrQuestion:Array<Question> = Array() //quenstions from server
-    var arrAnswer:Array<Dictionary<String,Int>> = Array() // answers request to server
+    var arrQuestion:Array<String> = Array() //quenstions from server
+    var arrAnswer:Array<Int> = Array() //answers request to server
     var iCurrentQuestion = 0
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class QuestionsViewController: BaseViewController {
     }
     
     override func popViewController(sender: AnyObject) {
-        if(arrQuestion.count == 0){
+        if(arrQuestion.count > 0){
             //TODO: Push previous question
             
             self.vWrap?.layer.addPushLeftAnimation()

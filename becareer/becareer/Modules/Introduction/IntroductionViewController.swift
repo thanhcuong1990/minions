@@ -14,9 +14,10 @@ class IntroductionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpNextButton()
+        self.navigationController?.navigationBar.hidden = false
         self.navigationItem.hidesBackButton = true
-        
         self.navigationItem.title = NSLocalizedString("introduction", comment: "")
+        
         var style = NSMutableParagraphStyle()
         style.lineSpacing = 8
         let attributes = [NSParagraphStyleAttributeName : style, NSFontAttributeName:UIFont.systemFontOfSize(15)]

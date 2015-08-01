@@ -22,19 +22,23 @@ class RegisterViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.setUpNextButton()
         self.tfName?.placeholder = NSLocalizedString("name", comment: "")
         self.tfEmail?.placeholder = NSLocalizedString("email", comment: "")
         self.lblLanguage?.text = NSLocalizedString("language", comment: "")
         
-        self.vName?.layer.addBorderCorner(UIColor(rgba: "#e2e2e2"), corner: 10, width: 1)
-        self.vEmail?.layer.addBorderCorner(UIColor(rgba: "#e2e2e2"), corner: 10, width: 1)
-        
-        self.navigationItem.title = NSLocalizedString("register", comment: "")
+        self.vName?.layer.addBorderCorner(UIColor.whiteColor(), corner: 10, width: 1)
+        self.vEmail?.layer.addBorderCorner(UIColor.whiteColor(), corner: 10, width: 1)
+
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func nextButtonClick(sender: AnyObject) {
+        self.goToIntroduction()
     }
     
     // MARK: IBActions
@@ -45,6 +49,16 @@ class RegisterViewController: BaseViewController {
 
 }
 
+//MARK: Private
+extension RegisterViewController{
+    func goToIntroduction(){
+        APP_DELEGATE.uCurrentUser = User(name: self.tfName!.text!, email: self.tfEmail!.text!)
+        let vcIntroduction = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Introduction) as! IntroductionViewController
+        self.navigationController?.pushViewController(vcIntroduction, animated: true)
+    }
+}
+
+//MARK:UITextFieldDelegate
 extension RegisterViewController:UITextFieldDelegate{
     
     func textFieldDidBeginEditing(textField: UITextField) {
@@ -72,9 +86,7 @@ extension RegisterViewController:UITextFieldDelegate{
                 UIAlertView(title: NSLocalizedString("error_title", comment: ""), message: NSLocalizedString("register_error_message", comment: ""), delegate: nil, cancelButtonTitle: NSLocalizedString("ok", comment: "")).show()
             }
             else {
-                APP_DELEGATE.uCurrentUser = User(name: self.tfName!.text!, email: self.tfEmail!.text!)
-                let vcIntroduction = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Introduction) as! IntroductionViewController
-                self.navigationController?.pushViewController(vcIntroduction, animated: true)
+                self.goToIntroduction()
             }
         }
         return true
