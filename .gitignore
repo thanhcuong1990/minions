@@ -1,3 +1,6 @@
+deploy.rb
+server.pid
+
 ### OSX ###
 .DS_Store
 .AppleDouble
