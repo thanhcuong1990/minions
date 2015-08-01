@@ -34,6 +34,7 @@
 		6FDAF4291B6CC82A00741752 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAF4281B6CC82A00741752 /* Answer.swift */; };
 		6FDAF4311B6CD37A00741752 /* AnswerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAF42F1B6CD37A00741752 /* AnswerCell.swift */; };
 		6FDAF4321B6CD37A00741752 /* AnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FDAF4301B6CD37A00741752 /* AnswerCell.xib */; };
+		6FDAF4341B6CDBCD00741752 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAF4331B6CDBCD00741752 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +69,7 @@
 		6FDAF4281B6CC82A00741752 /* Answer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
 		6FDAF42F1B6CD37A00741752 /* AnswerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnswerCell.swift; sourceTree = "<group>"; };
 		6FDAF4301B6CD37A00741752 /* AnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCell.xib; sourceTree = "<group>"; };
+		6FDAF4331B6CDBCD00741752 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				6FDAF4261B6CC79000741752 /* Question.swift */,
 				6FDAF4281B6CC82A00741752 /* Answer.swift */,
+				6FDAF4331B6CDBCD00741752 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				6FDAF4231B6C991A00741752 /* CALayerExtension.swift in Sources */,
 				6FDAF40F1B6C7E5A00741752 /* QuestionsViewController.swift in Sources */,
 				6FDAF4151B6C7E5A00741752 /* SuggestionViewController.swift in Sources */,
+				6FDAF4341B6CDBCD00741752 /* User.swift in Sources */,
 				6FDAF4251B6C99E500741752 /* UIColorExtension.swift in Sources */,
 				6FDAF40D1B6C7E5A00741752 /* IntroductionViewController.swift in Sources */,
 				6FDAF4191B6C7E5A00741752 /* BaseViewController.swift in Sources */,

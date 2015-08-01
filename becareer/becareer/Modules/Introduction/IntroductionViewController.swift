@@ -21,6 +21,7 @@ class IntroductionViewController: BaseViewController {
         style.lineSpacing = 8
         let attributes = [NSParagraphStyleAttributeName : style, NSFontAttributeName:UIFont.systemFontOfSize(15)]
         self.tvDescription?.attributedText = NSAttributedString(string: NSLocalizedString("introduction_description", comment: ""), attributes:attributes)
+        
     }
 
     override func didReceiveMemoryWarning() {

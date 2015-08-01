@@ -10,6 +10,7 @@ import UIKit
 
 class QuestionsViewController: BaseViewController {
 
+    @IBOutlet weak var vWrap: UIView?
     @IBOutlet weak var tvQuestion: UITextView?
     @IBOutlet weak var tbvAnswers: UITableView?
     
@@ -22,7 +23,7 @@ class QuestionsViewController: BaseViewController {
         self.setUpBackButton()
         self.setUpNextButton()
         
-        self.navigationItem.title = NSLocalizedString("questions", comment: "")
+        self.navigationItem.title = NSLocalizedString("questions", comment: "").stringByAppendingString(" \(iCurrentQuestion + 1)")
         self.tbvAnswers?.registerNib(UINib(nibName: "AnswerCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "AnswerCell")
         self.tbvAnswers?.layer.addTopLine(UIColor(rgba: "#e2e2e2"), width: 1)
         
@@ -38,9 +39,10 @@ class QuestionsViewController: BaseViewController {
     }
     
     override func popViewController(sender: AnyObject) {
-        if(arrQuestion.count > 0){
+        if(arrQuestion.count == 0){
             //TODO: Push previous question
             
+            self.vWrap?.layer.addPushLeftAnimation()
         }
         else{
             super.popViewController(sender)
@@ -48,7 +50,7 @@ class QuestionsViewController: BaseViewController {
     }
     
     override func nextButtonClick(sender: AnyObject) {
-        
+        self.vWrap?.layer.addPushRightAnimation()
     }
 
 }

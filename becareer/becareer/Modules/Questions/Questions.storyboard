@@ -21,7 +21,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22U-77-aNo">
                                 <rect key="frame" x="0.0" y="64" width="300" height="536"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9l-Lm-mrE">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D9l-Lm-mrE">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="225"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -66,6 +66,7 @@
                     <connections>
                         <outlet property="tbvAnswers" destination="2ZP-M4-8ar" id="6MC-gs-7FX"/>
                         <outlet property="tvQuestion" destination="D9l-Lm-mrE" id="FND-FQ-urz"/>
+                        <outlet property="vWrap" destination="22U-77-aNo" id="V4W-90-bEU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igS-gc-OAF" userLabel="First Responder" sceneMemberID="firstResponder"/>

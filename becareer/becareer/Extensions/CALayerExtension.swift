@@ -40,4 +40,20 @@ extension CALayer{
         bottomLine.backgroundColor = color.CGColor
         self.addSublayer(bottomLine)
     }
+    
+    func addPushLeftAnimation(){
+        var pushAnimation = CATransition()
+        pushAnimation.duration = 0.3
+        pushAnimation.type = kCATransitionPush
+        pushAnimation.subtype = kCATransitionFromLeft
+        self.addAnimation(pushAnimation, forKey: nil)
+    }
+    
+    func addPushRightAnimation(){
+        var pushAnimation = CATransition()
+        pushAnimation.duration = 0.3
+        pushAnimation.type = kCATransitionPush
+        pushAnimation.subtype = kCATransitionFromRight
+        self.addAnimation(pushAnimation, forKey: nil)
+    }
 }

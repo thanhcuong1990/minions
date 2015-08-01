@@ -72,6 +72,7 @@ extension RegisterViewController:UITextFieldDelegate{
                 UIAlertView(title: NSLocalizedString("error_title", comment: ""), message: NSLocalizedString("register_error_message", comment: ""), delegate: nil, cancelButtonTitle: NSLocalizedString("ok", comment: "")).show()
             }
             else {
+                APP_DELEGATE.uCurrentUser = User(name: self.tfName!.text!, email: self.tfEmail!.text!)
                 let vcIntroduction = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Introduction) as! IntroductionViewController
                 self.navigationController?.pushViewController(vcIntroduction, animated: true)
             }
