@@ -39,8 +39,8 @@ class QuestionsViewController: BaseViewController {
     }
     
     override func popViewController(sender: AnyObject) {
+        //TODO: Check current question to pop up view controller
         if(arrQuestion.count > 0){
-            //TODO: Push previous question
             
             self.vWrap?.layer.addPushLeftAnimation()
         }
@@ -50,7 +50,14 @@ class QuestionsViewController: BaseViewController {
     }
     
     override func nextButtonClick(sender: AnyObject) {
-        self.vWrap?.layer.addPushRightAnimation()
+        //TODO: Check current question to next to result
+        if(iCurrentQuestion < self.arrQuestion.count - 1){
+            self.vWrap?.layer.addPushRightAnimation()
+        }
+        else{
+           let vcResult = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Result) as! ResultViewController
+            self.navigationController?.pushViewController(vcResult, animated: true)
+        }
     }
 
 }

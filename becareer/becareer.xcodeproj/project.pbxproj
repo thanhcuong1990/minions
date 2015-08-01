@@ -34,6 +34,8 @@
 		6FDAF4321B6CD37A00741752 /* AnswerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FDAF4301B6CD37A00741752 /* AnswerCell.xib */; };
 		6FDAF4361B6CF30A00741752 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAF4351B6CF30A00741752 /* User.swift */; };
 		6FDAF4381B6D0A8A00741752 /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAF4371B6D0A8A00741752 /* UIImageExtension.swift */; };
+		6FDAF43C1B6D165100741752 /* MajorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FDAF43A1B6D165100741752 /* MajorCell.swift */; };
+		6FDAF43D1B6D165100741752 /* MajorCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6FDAF43B1B6D165100741752 /* MajorCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +70,8 @@
 		6FDAF4301B6CD37A00741752 /* AnswerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AnswerCell.xib; sourceTree = "<group>"; };
 		6FDAF4351B6CF30A00741752 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6FDAF4371B6D0A8A00741752 /* UIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
+		6FDAF43A1B6D165100741752 /* MajorCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MajorCell.swift; sourceTree = "<group>"; };
+		6FDAF43B1B6D165100741752 /* MajorCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MajorCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +262,7 @@
 		6FDAF40B1B6C7E5A00741752 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				6FDAF4391B6D160B00741752 /* MajorCell */,
 				6FDAF42E1B6CD33900741752 /* AnswerCell */,
 			);
 			path = Views;
@@ -270,6 +275,15 @@
 				6FDAF4301B6CD37A00741752 /* AnswerCell.xib */,
 			);
 			path = AnswerCell;
+			sourceTree = "<group>";
+		};
+		6FDAF4391B6D160B00741752 /* MajorCell */ = {
+			isa = PBXGroup;
+			children = (
+				6FDAF43A1B6D165100741752 /* MajorCell.swift */,
+				6FDAF43B1B6D165100741752 /* MajorCell.xib */,
+			);
+			path = MajorCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FDAF3DB1B6C7E1A00741752 /* LaunchScreen.xib in Resources */,
+				6FDAF43D1B6D165100741752 /* MajorCell.xib in Resources */,
 				6FDAF4121B6C7E5A00741752 /* Result.storyboard in Resources */,
 				6FDAF3D81B6C7E1A00741752 /* Images.xcassets in Resources */,
 				6FDAF40E1B6C7E5A00741752 /* Questions.storyboard in Resources */,
@@ -380,6 +395,7 @@
 				6FDAF4311B6CD37A00741752 /* AnswerCell.swift in Sources */,
 				6FDAF3D11B6C7E1A00741752 /* AppDelegate.swift in Sources */,
 				6FDAF4111B6C7E5A00741752 /* RegisterViewController.swift in Sources */,
+				6FDAF43C1B6D165100741752 /* MajorCell.swift in Sources */,
 				6FDAF4181B6C7E5A00741752 /* StoryboardManager.swift in Sources */,
 				6FDAF4381B6D0A8A00741752 /* UIImageExtension.swift in Sources */,
 			);

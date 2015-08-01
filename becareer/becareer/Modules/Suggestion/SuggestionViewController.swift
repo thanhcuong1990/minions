@@ -12,8 +12,9 @@ class SuggestionViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setUpBackButton()
+        
+        self.navigationItem.title = NSLocalizedString("suggestion", comment: "")
     }
 
     override func didReceiveMemoryWarning() {
