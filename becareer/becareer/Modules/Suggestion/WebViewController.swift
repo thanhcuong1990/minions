@@ -10,11 +10,14 @@ import UIKit
 
 class WebViewController: BaseViewController {
 
+    @IBOutlet weak var wbvLoader: UIWebView?
     var sUrl:String?
+    var sUniversity:String?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setUpBackButton()
+        self.navigationItem.title = self.sUniversity
+        self.wbvLoader?.loadRequest(NSURLRequest(URL: NSURL(string: self.sUrl!)!))
     }
 
     override func didReceiveMemoryWarning() {

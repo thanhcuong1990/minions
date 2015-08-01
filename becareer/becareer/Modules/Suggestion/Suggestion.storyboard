@@ -55,9 +55,24 @@
                     <view key="view" contentMode="scaleToFill" id="ZR7-Q3-zQy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQh-lz-BZI">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Zg-cu-B4g" firstAttribute="top" secondItem="kQh-lz-BZI" secondAttribute="bottom" id="8l7-tt-MCY"/>
+                            <constraint firstItem="kQh-lz-BZI" firstAttribute="top" secondItem="5en-2n-a9a" secondAttribute="bottom" id="EHb-MM-Ce6"/>
+                            <constraint firstItem="kQh-lz-BZI" firstAttribute="leading" secondItem="ZR7-Q3-zQy" secondAttribute="leading" id="IFx-D6-Vye"/>
+                            <constraint firstAttribute="trailing" secondItem="kQh-lz-BZI" secondAttribute="trailing" id="tOA-by-88g"/>
+                        </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="wbvLoader" destination="kQh-lz-BZI" id="fM0-jv-kS9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Ig-rz-cQZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -26,7 +26,8 @@ class SuggestionViewController: BaseViewController {
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        (segue.destinationViewController as! WebViewController).sUrl = sender as? String
+        (segue.destinationViewController as! WebViewController).sUniversity = (sender as! UniversityCell).lblName?.text
+        (segue.destinationViewController as! WebViewController).sUrl = (sender as! UniversityCell).lblWebsite?.text
     }
 
 }
@@ -48,13 +49,12 @@ extension SuggestionViewController:UITableViewDataSource,UITableViewDelegate{
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UniversityCell", forIndexPath: indexPath) as! UniversityCell
         cell.lblName?.text = "University"
-        cell.lblWebsite?.text = "https://www.university.com.vn"
+        cell.lblWebsite?.text = "http://vnexpress.net"
         cell.imgUniversity?.image = UIImage(named: "logo")
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let sUrl = (tableView.cellForRowAtIndexPath(indexPath) as! UniversityCell).lblWebsite?.text
-        self.performSegueWithIdentifier("ShowWebSegue", sender: sUrl)
+        self.performSegueWithIdentifier("ShowWebSegue", sender: tableView.cellForRowAtIndexPath(indexPath))
     }
 }
