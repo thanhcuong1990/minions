@@ -7,4 +7,13 @@ class User < ActiveRecord::Base
 
   has_many :answers, dependent: :destroy
 
+  def self.set_user_sign_in(user)
+    @user_sign_in = user
+  end
+
+  def generate_authentication_token!
+    begin
+      self.auth_token = Devise.friendly_token
+    end while self.class.exists?(auth_token: auth_token)
+  end
 end

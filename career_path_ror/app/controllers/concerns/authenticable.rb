@@ -2,16 +2,12 @@ module Authenticable
 
   # Devise methods overwrites
   def current_user
-    user_device = request.headers['Device'].presence
-    @current_user = user_device && User.find_by(device_id: user_device)
+    user_email = request.headers['Auth-Email'].presence
+    @current_user = user_email && User.find_by(email: user_email)
 
-    if @current_user && Devise.secure_compare(@current_user.auth_token, request.headers['Authorization'])
-      if @current_user.timedout?(@current_user.current_sign_in_at)
-        return
-      else
+    if @current_user && Devise.secure_compare(@current_user.auth_token, request.headers['Auth-Token'])
         User.set_user_sign_in(@current_user)
         return @current_user
-      end
     end
   end
 
