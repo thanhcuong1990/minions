@@ -12,8 +12,10 @@ class QustionsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.setUpBackButton()
+        self.setUpNextButton()
+        
+        self.navigationItem.title = NSLocalizedString("questions", comment: "")
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,15 +23,12 @@ class QustionsViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    override func popViewController(sender: AnyObject) {
+        
     }
-    */
+    
+    override func nextButtonClick(sender: AnyObject) {
+        
+    }
 
 }

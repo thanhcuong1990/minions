@@ -14,6 +14,7 @@ class IntroductionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpBackButton()
+        self.setUpNextButton()
         
         self.navigationItem.title = NSLocalizedString("introduction", comment: "")
     }
@@ -21,6 +22,13 @@ class IntroductionViewController: BaseViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func nextButtonClick(sender: AnyObject) {
+        super.nextButtonClick(sender)
+        
+        let vcQuestions = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Questions) as! QustionsViewController
+        self.navigationController?.pushViewController(vcQuestions, animated: true)
     }
 
 }

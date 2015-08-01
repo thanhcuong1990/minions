@@ -26,6 +26,7 @@ class BaseViewController: UIViewController {
 //MARK: Private
 
 extension BaseViewController{
+    
     func setUpBackButton(){
         var cgrNavigationBar = self.navigationController?.navigationBar.frame.size;
         var btnLeft = UIButton(frame: CGRectMake(0, cgrNavigationBar!.height/10, cgrNavigationBar!.width/10, cgrNavigationBar!.height/1.5))
@@ -39,6 +40,19 @@ extension BaseViewController{
         self.navigationItem.leftBarButtonItems = [self.negativeBarButton(-10),bbiLeft]
     }
     
+    func setUpNextButton(){
+        var cgrNavigationBar = self.navigationController?.navigationBar.frame.size;
+        var btnRight = UIButton(frame: CGRectMake(0, cgrNavigationBar!.height/10, cgrNavigationBar!.width/10, cgrNavigationBar!.height/1.5))
+        btnRight.imageEdgeInsets = UIEdgeInsets(top: -2.5, left: 0, bottom: 2.5, right: 0)
+        btnRight.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        btnRight.setImage(UIImage(named: "next"), forState: .Normal)
+        btnRight.setImage(UIImage(named: "next_white"), forState: .Highlighted)
+        btnRight.addTarget(self, action: "nextButtonClick:", forControlEvents: .TouchUpInside)
+        var bbiRight = UIBarButtonItem(customView: btnRight)
+        
+        self.navigationItem.rightBarButtonItems = [self.negativeBarButton(-10),bbiRight]
+    }
+    
     func negativeBarButton(negative:CGFloat) -> UIBarButtonItem{
         var bbiNegativeSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FixedSpace, target: nil, action: nil)
         bbiNegativeSpace.width = negative
@@ -47,5 +61,9 @@ extension BaseViewController{
     
     func popViewController(sender:AnyObject){
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    func nextButtonClick(sender:AnyObject){
+        
     }
 }
