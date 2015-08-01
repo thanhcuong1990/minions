@@ -20,3 +20,8 @@
 "suitable" = "Phù hợp với ngành:";
 "suggestion" = "Gợi ý";
 "question_error_message" = "Hãy chọn câu trả lời cho câu hỏi dưới để tiếp tục";
+"wrong" = "Không hề đúng với bạn";
+"a_little" = "Đúng trong một vài trường hợp";
+"half" = "Tỉ lệ đúng, sai với bạn là 50%";
+"near_right" = "Đúng trong hầu hết mọi trường hợp";
+"right" = "Rất đúng với bạn";

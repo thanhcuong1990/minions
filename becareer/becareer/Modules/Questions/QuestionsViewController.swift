@@ -71,6 +71,7 @@ class QuestionsViewController: BaseViewController {
             }
             else{
                 let vcResult = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Result) as! ResultViewController
+                vcResult.arrAnswer = self.arrAnswer
                 self.navigationController?.pushViewController(vcResult, animated: true)
             }
         }
@@ -104,7 +105,25 @@ extension QuestionsViewController:UITableViewDelegate, UITableViewDataSource{
         else{
             cell.accessoryType = UITableViewCellAccessoryType.None
         }
-        cell.lblTitle?.text = "\(indexPath.row + 1)"
+        switch (indexPath.row){
+            case 0:
+                cell.lblTitle?.text = NSLocalizedString("wrong", comment: "")
+                break
+            case 1:
+                cell.lblTitle?.text = NSLocalizedString("a_little", comment: "")
+                break
+            case 2:
+                cell.lblTitle?.text = NSLocalizedString("half", comment: "")
+                break
+            case 3:
+                cell.lblTitle?.text = NSLocalizedString("near_right", comment: "")
+                break
+            case 4:
+                cell.lblTitle?.text = NSLocalizedString("right", comment: "")
+                break
+            default:
+                break
+        }
         return cell
     }
     

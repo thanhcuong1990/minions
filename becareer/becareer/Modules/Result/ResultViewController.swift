@@ -18,6 +18,8 @@ class ResultViewController: BaseViewController {
     @IBOutlet weak var tblMajors: UITableView?
     @IBOutlet weak var vTitleWrap: UIView?
     
+    var arrAnswer:Array<Int>?
+    var arrMajor:Array<NSDictionary>?
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -33,6 +35,13 @@ class ResultViewController: BaseViewController {
         
         self.tblMajors?.registerNib(UINib(nibName: "MajorCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "MajorCell")
         self.vTitleWrap?.layer.addBottomLine(UIColor(rgba: "#e2e2e2"), width: 1)
+        
+        APIClient.sharedInstance.result(APP_DELEGATE.uCurrentUser!, answer: self.arrAnswer!) { (questions) -> () in
+            self.arrMajor = questions
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tblMajors?.reloadData()
+            })
+        }
     }
 
     override func didReceiveMemoryWarning() {
