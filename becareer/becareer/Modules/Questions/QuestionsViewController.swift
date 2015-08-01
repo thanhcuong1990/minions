@@ -46,7 +46,7 @@ class QuestionsViewController: BaseViewController {
     }
     
     override func popViewController(sender: AnyObject) {
-        //TODO: Check current question to pop up view controller
+        //Check current question to pop up view controller
         if(self.iCurrentQuestion > 0){
             
             self.iCurrentQuestion--
@@ -60,8 +60,8 @@ class QuestionsViewController: BaseViewController {
     }
     
     override func nextButtonClick(sender: AnyObject) {
-        //TODO: Check current question to next to result
-        if(self.arrAnswer.count == self.iCurrentQuestion + 1){
+        //Check current question to next to result
+        if(self.arrAnswer.count >= self.iCurrentQuestion + 1){
             self.iCurrentQuestion++
             self.navigationItem.title = NSLocalizedString("questions", comment: "").stringByAppendingString(" \(iCurrentQuestion + 1)")
             if(self.iCurrentQuestion <= self.arrQuestion.count - 1){
@@ -109,13 +109,12 @@ extension QuestionsViewController:UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        self.tbvAnswers?.reloadData()
-        self.tbvAnswers?.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
-        if(self.arrAnswer.count == self.iCurrentQuestion + 1){
+        if(self.arrAnswer.count >= self.iCurrentQuestion + 1){
             self.arrAnswer[self.iCurrentQuestion] = indexPath.row + 1
         }
         else{
             self.arrAnswer.append(indexPath.row + 1)
         }
+        self.tbvAnswers?.reloadData()
     }
 }
