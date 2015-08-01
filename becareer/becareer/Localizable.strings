@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  becareer
+
+  Created by Nguyen Phuc Loc on 8/1/15.
+  Copyright (c) 2015 Minions. All rights reserved.
+*/
+
+"name" = "Name";
+"email" = "Email";
