@@ -14,6 +14,7 @@ let BaseUrl = "http://belifeu.com/api/v1"
 
 struct URL{
     static let Register = "/sessions"
+    static let Questions = "/questions"
 }
 
 // MARK: Storyboard

@@ -14,7 +14,7 @@ class QuestionsViewController: BaseViewController {
     @IBOutlet weak var tvQuestion: UITextView?
     @IBOutlet weak var tbvAnswers: UITableView?
     
-    var arrQuestion:Array<String> = Array() //quenstions from server
+    var arrQuestion:Array<NSDictionary> = Array() //quenstions from server
     var arrAnswer:Array<Int> = Array() //answers request to server
     var iCurrentQuestion = 0
     
@@ -31,6 +31,13 @@ class QuestionsViewController: BaseViewController {
         style.lineSpacing = 5
         let attributes = [NSParagraphStyleAttributeName : style, NSFontAttributeName:UIFont.systemFontOfSize(15)]
         self.tvQuestion?.attributedText = NSAttributedString(string: self.tvQuestion!.text!, attributes:attributes)
+        
+        APIClient.sharedInstance.questions(APP_DELEGATE.uCurrentUser!, completed: { (questions) -> () in
+            self.arrQuestion = questions
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tvQuestion?.text = (self.arrQuestion[self.iCurrentQuestion] as NSDictionary).objectForKey("content") as! String
+            })
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,9 +47,12 @@ class QuestionsViewController: BaseViewController {
     
     override func popViewController(sender: AnyObject) {
         //TODO: Check current question to pop up view controller
-        if(arrQuestion.count > 0){
+        if(self.iCurrentQuestion > 0){
             
+            self.iCurrentQuestion--
+            self.tbvAnswers?.reloadData()
             self.vWrap?.layer.addPushLeftAnimation()
+            self.navigationItem.title = NSLocalizedString("questions", comment: "").stringByAppendingString(" \(iCurrentQuestion + 1)")
         }
         else{
             super.popViewController(sender)
@@ -51,12 +61,21 @@ class QuestionsViewController: BaseViewController {
     
     override func nextButtonClick(sender: AnyObject) {
         //TODO: Check current question to next to result
-        if(iCurrentQuestion < self.arrQuestion.count - 1){
-            self.vWrap?.layer.addPushRightAnimation()
+        if(self.arrAnswer.count == self.iCurrentQuestion + 1){
+            self.iCurrentQuestion++
+            self.navigationItem.title = NSLocalizedString("questions", comment: "").stringByAppendingString(" \(iCurrentQuestion + 1)")
+            if(self.iCurrentQuestion < self.arrQuestion.count - 1){
+                self.tvQuestion?.text = (self.arrQuestion[self.iCurrentQuestion] as NSDictionary).objectForKey("content") as! String
+                self.tbvAnswers?.reloadData()
+                self.vWrap?.layer.addPushRightAnimation()
+            }
+            else{
+                let vcResult = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Result) as! ResultViewController
+                self.navigationController?.pushViewController(vcResult, animated: true)
+            }
         }
         else{
-           let vcResult = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Result) as! ResultViewController
-            self.navigationController?.pushViewController(vcResult, animated: true)
+            UIAlertView(title: NSLocalizedString("error_title", comment: ""), message: NSLocalizedString("question_error_message", comment: ""), delegate: nil, cancelButtonTitle: NSLocalizedString("ok", comment: "")).show()
         }
     }
 
@@ -79,13 +98,24 @@ extension QuestionsViewController:UITableViewDelegate, UITableViewDataSource{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         var cell = tableView.dequeueReusableCellWithIdentifier("AnswerCell", forIndexPath: indexPath) as! AnswerCell
-        cell.accessoryType = UITableViewCellAccessoryType.None
-        cell.lblTitle?.text = "Answer"
+        if(self.arrAnswer.count > self.iCurrentQuestion && self.arrAnswer[self.iCurrentQuestion] - 1 == indexPath.row){
+            cell.accessoryType = UITableViewCellAccessoryType.Checkmark
+        }
+        else{
+            cell.accessoryType = UITableViewCellAccessoryType.None
+        }
+        cell.lblTitle?.text = "\(indexPath.row + 1)"
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         self.tbvAnswers?.reloadData()
         self.tbvAnswers?.cellForRowAtIndexPath(indexPath)?.accessoryType = UITableViewCellAccessoryType.Checkmark
+        if(self.arrAnswer.count == self.iCurrentQuestion + 1){
+            self.arrAnswer[self.iCurrentQuestion] = indexPath.row + 1
+        }
+        else{
+            self.arrAnswer.append(indexPath.row + 1)
+        }
     }
 }

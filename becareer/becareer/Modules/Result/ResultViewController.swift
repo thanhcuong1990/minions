@@ -32,7 +32,7 @@ class ResultViewController: BaseViewController {
         self.lblEmail?.text = APP_DELEGATE.uCurrentUser?.sEmail
         
         self.tblMajors?.registerNib(UINib(nibName: "MajorCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "MajorCell")
-        self.vTitleWrap?.layer.addBottomLine(UIColor(rgba: "#9EE63D"), width: 2)
+        self.vTitleWrap?.layer.addBottomLine(UIColor(rgba: "#e2e2e2"), width: 1)
     }
 
     override func didReceiveMemoryWarning() {

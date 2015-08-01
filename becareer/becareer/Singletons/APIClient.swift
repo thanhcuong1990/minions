@@ -29,4 +29,11 @@ class APIClient {
             completed(responseObj:uTemp)
         }
     }
+    
+    func questions(user:User, completed:(questions:Array<NSDictionary>) -> ()){
+        let headers:Dictionary<String, String> = ["Auth-Token" : user.sAuthorToken!,"Auth-Email" : user.sEmail!]
+        Networking.sharedInstance.getAndReturnDictionary(BaseUrl.stringByAppendingString(URL.Questions), params: nil, headers: headers) { (success, apiResponse) -> () in
+            completed(questions: apiResponse.dataObject!.objectForKey("questions") as! Array<NSDictionary>)
+        }
+    }
 }
