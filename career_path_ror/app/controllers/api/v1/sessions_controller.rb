@@ -3,9 +3,6 @@ class Api::V1::SessionsController < ApiController
 
   # Login API
   def create
-    validate_params("sessions", params)
-    return if has_error?
-
     name = params[:name]
     email = params[:email]
 
