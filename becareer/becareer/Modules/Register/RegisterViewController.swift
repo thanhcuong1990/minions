@@ -11,6 +11,7 @@ import UIKit
 class RegisterViewController: BaseViewController {
 
     @IBOutlet weak var imgvLogo: UIImageView?
+    @IBOutlet weak var scvWrap: UIScrollView?
     @IBOutlet weak var vName: UIView?
     @IBOutlet weak var vEmail: UIView?
     @IBOutlet weak var tfName: UITextField?
@@ -36,13 +37,28 @@ class RegisterViewController: BaseViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    // MARK: IBActions
+    
+    @IBAction func vWrapTapped(sender: AnyObject) {
         self.view.endEditing(true)
     }
 
 }
 
 extension RegisterViewController:UITextFieldDelegate{
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.scvWrap?.contentOffset = CGPointMake(0, textField.frame.maxY)
+        })
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.scvWrap?.contentOffset = CGPointMake(0, 0)
+        })
+    }
+    
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if(textField == self.tfName){
             self.tfEmail?.becomeFirstResponder()
