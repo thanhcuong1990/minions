@@ -134,13 +134,13 @@ Carthage/Build
 *.gem
 *.rbc
 /.config
-/coverage/
-/InstalledFiles
-/pkg/
-/spec/reports/
-/test/tmp/
-/test/version_tmp/
-/tmp/
+/career_path_ror/coverage/
+/career_path_ror/InstalledFiles
+/career_path_ror/pkg/
+/career_path_ror/spec/reports/
+/career_path_ror/test/tmp/
+/career_path_ror/test/version_tmp/
+/career_path_ror/tmp/
 
 ## Specific to RubyMotion:
 .dat*
@@ -172,12 +172,12 @@ build/
 *.rbc
 capybara-*.html
 .rspec
-/log
-/tmp
-/db/*.sqlite3
-/db/*.sqlite3-journal
-/public/system
-/coverage/
+/career_path_ror/log
+/career_path_ror/tmp
+/career_path_ror/db/*.sqlite3
+/career_path_ror/db/*.sqlite3-journal
+/career_path_ror/public/system
+/career_path_ror/coverage/
 /spec/tmp
 **.orig
 rerun.txt
