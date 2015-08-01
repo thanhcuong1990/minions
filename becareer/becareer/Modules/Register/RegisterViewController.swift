@@ -48,15 +48,19 @@ class RegisterViewController: BaseViewController {
 extension RegisterViewController:UITextFieldDelegate{
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            self.scvWrap?.contentOffset = CGPointMake(0, textField.frame.maxY)
-        })
+        if(DeviceType.IS_IPHONE_5 || DeviceType.IS_IPHONE_4_OR_LESS){
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.scvWrap?.contentOffset = CGPointMake(0, textField.frame.maxY)
+            })
+        }
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
-        UIView.animateWithDuration(0.5, animations: { () -> Void in
-            self.scvWrap?.contentOffset = CGPointMake(0, 0)
-        })
+        if(DeviceType.IS_IPHONE_5 || DeviceType.IS_IPHONE_4_OR_LESS){
+            UIView.animateWithDuration(0.5, animations: { () -> Void in
+                self.scvWrap?.contentOffset = CGPointMake(0, 0)
+            })
+        }
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

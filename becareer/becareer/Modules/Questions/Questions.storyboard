@@ -3,22 +3,70 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Qustions View Controller-->
+        <!--Questions View Controller-->
         <scene sceneID="C3Z-4Z-9tE">
             <objects>
-                <viewController id="C60-0Y-EuO" customClass="QustionsViewController" customModule="becareer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="C60-0Y-EuO" customClass="QuestionsViewController" customModule="becareer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zWh-yG-LoL"/>
                         <viewControllerLayoutGuide type="bottom" id="7OY-ub-xh2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AYY-Di-vEA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22U-77-aNo">
+                                <rect key="frame" x="0.0" y="64" width="300" height="536"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D9l-Lm-mrE">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="225"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="D9l-Lm-mrE" secondAttribute="height" multiplier="4:3" id="Oi6-vE-dOJ"/>
+                                        </constraints>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="2ZP-M4-8ar">
+                                        <rect key="frame" x="0.0" y="225" width="300" height="311"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="C60-0Y-EuO" id="jvk-Fd-XCD"/>
+                                            <outlet property="delegate" destination="C60-0Y-EuO" id="3na-1b-ZI2"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="D9l-Lm-mrE" secondAttribute="trailing" id="0dw-cG-2Bs"/>
+                                    <constraint firstItem="D9l-Lm-mrE" firstAttribute="top" secondItem="22U-77-aNo" secondAttribute="top" id="5cs-dl-UZU"/>
+                                    <constraint firstItem="D9l-Lm-mrE" firstAttribute="leading" secondItem="22U-77-aNo" secondAttribute="leading" id="Dpu-rt-FOK"/>
+                                    <constraint firstAttribute="trailing" secondItem="2ZP-M4-8ar" secondAttribute="trailing" id="StE-r9-fQn"/>
+                                    <constraint firstItem="2ZP-M4-8ar" firstAttribute="top" secondItem="D9l-Lm-mrE" secondAttribute="bottom" id="XK1-m0-hb7"/>
+                                    <constraint firstItem="2ZP-M4-8ar" firstAttribute="leading" secondItem="22U-77-aNo" secondAttribute="leading" id="kuR-rS-6kL"/>
+                                    <constraint firstAttribute="bottom" secondItem="2ZP-M4-8ar" secondAttribute="bottom" id="wbu-wt-Yjv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7OY-ub-xh2" firstAttribute="top" secondItem="22U-77-aNo" secondAttribute="bottom" id="7Y3-d5-0oN"/>
+                            <constraint firstItem="22U-77-aNo" firstAttribute="leading" secondItem="AYY-Di-vEA" secondAttribute="leading" id="gEL-rr-MpO"/>
+                            <constraint firstAttribute="trailing" secondItem="22U-77-aNo" secondAttribute="trailing" id="lLH-7U-IxF"/>
+                            <constraint firstItem="22U-77-aNo" firstAttribute="top" secondItem="zWh-yG-LoL" secondAttribute="bottom" id="mdq-N4-8NV"/>
+                        </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="600"/>
+                    <connections>
+                        <outlet property="tbvAnswers" destination="2ZP-M4-8ar" id="6MC-gs-7FX"/>
+                        <outlet property="tvQuestion" destination="D9l-Lm-mrE" id="FND-FQ-urz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igS-gc-OAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

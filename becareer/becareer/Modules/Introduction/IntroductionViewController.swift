@@ -31,7 +31,7 @@ class IntroductionViewController: BaseViewController {
     override func nextButtonClick(sender: AnyObject) {
         super.nextButtonClick(sender)
         
-        let vcQuestions = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Questions) as! QustionsViewController
+        let vcQuestions = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Questions) as! QuestionsViewController
         self.navigationController?.pushViewController(vcQuestions, animated: true)
     }
 
