@@ -24,16 +24,20 @@ class APIClient {
     func register(name:String, email:String, completed: (responseObj:User) -> ()){
         let params:Dictionary<String, String> = ["name" : name,"email" : email]
         Networking.sharedInstance.postAndReturnDictionary(BaseUrl.stringByAppendingString(URL.Register), params: params, headers: nil) { (success, apiResponse) -> () in
-            var uTemp = User()
-            uTemp.parseUser(apiResponse.dataObject!.objectForKey("user") as! NSDictionary)
-            completed(responseObj:uTemp)
+            if(success == true){
+                var uTemp = User()
+                uTemp.parseUser(apiResponse.dataObject!.objectForKey("user") as! NSDictionary)
+                completed(responseObj:uTemp)
+            }
         }
     }
     
     func questions(user:User, completed:(questions:Array<NSDictionary>) -> ()){
         let headers:Dictionary<String, String> = ["Auth-Token" : user.sAuthorToken!,"Auth-Email" : user.sEmail!]
         Networking.sharedInstance.getAndReturnDictionary(BaseUrl.stringByAppendingString(URL.Questions), params: nil, headers: headers) { (success, apiResponse) -> () in
-            completed(questions: apiResponse.dataObject!.objectForKey("questions") as! Array<NSDictionary>)
+            if(success == true){
+                completed(questions: apiResponse.dataObject!.objectForKey("questions") as! Array<NSDictionary>)
+            }
         }
     }
     
@@ -41,7 +45,9 @@ class APIClient {
         let params:Dictionary<String, Array<Int>> = ["results" : answer]
         let headers:Dictionary<String, String> = ["Auth-Token" : user.sAuthorToken!,"Auth-Email" : user.sEmail!]
         Networking.sharedInstance.postAndReturnDictionary(BaseUrl.stringByAppendingString(URL.Result), params: params, headers: headers) { (success, apiResponse) -> () in
-            completed(questions: apiResponse.dataObject!.objectForKey("results") as! Array<NSDictionary>)
+            if(success == true){
+                completed(questions: apiResponse.dataObject!.objectForKey("results") as! Array<NSDictionary>)
+            }
         }
     }
     
@@ -49,7 +55,9 @@ class APIClient {
         let params:Dictionary<String, Int> = ["type" : majorId]
         let headers:Dictionary<String, String> = ["Auth-Token" : user.sAuthorToken!,"Auth-Email" : user.sEmail!]
         Networking.sharedInstance.getAndReturnDictionary(BaseUrl.stringByAppendingString(URL.Universities), params: params, headers: headers) { (success, apiResponse) -> () in
-            completed(universities: apiResponse.dataObject!.objectForKey("universities") as! Array<NSDictionary>)
+            if(success == true){
+                completed(universities: apiResponse.dataObject!.objectForKey("universities") as! Array<NSDictionary>)
+            }
         }
         
     }

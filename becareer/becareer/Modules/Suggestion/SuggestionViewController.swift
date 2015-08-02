@@ -24,6 +24,9 @@ class SuggestionViewController: BaseViewController {
         
         APIClient.sharedInstance.universities(APP_DELEGATE.uCurrentUser!, majorId: self.iMajorId!) { (universities) -> () in
             self.arrUniversities = universities
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.tblUniversities?.reloadData()
+            })
         }
     }
 
@@ -60,7 +63,7 @@ extension SuggestionViewController:UITableViewDataSource,UITableViewDelegate{
         let cell = tableView.dequeueReusableCellWithIdentifier("UniversityCell", forIndexPath: indexPath) as! UniversityCell
         cell.lblName?.text = self.arrUniversities![advance(self.arrUniversities!.startIndex, indexPath.row)].objectForKey("name") as? String
         cell.lblWebsite?.text = self.arrUniversities![advance(self.arrUniversities!.startIndex, indexPath.row)].objectForKey("website") as? String
-        cell.imgUniversity?.sd_setImageWithURL(NSURL(string: (self.arrUniversities![advance(self.arrUniversities!.startIndex, indexPath.row)].objectForKey("imag_url") as! String)), placeholderImage: UIImage(named: "logo"))
+        cell.imgUniversity?.sd_setImageWithURL(NSURL(string: (self.arrUniversities![advance(self.arrUniversities!.startIndex, indexPath.row)].objectForKey("image_url") as! String)), placeholderImage: UIImage(named: "logo"))
         return cell
     }
     

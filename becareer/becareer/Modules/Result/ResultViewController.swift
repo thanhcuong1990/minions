@@ -36,7 +36,6 @@ class ResultViewController: BaseViewController {
         self.tblMajors?.registerNib(UINib(nibName: "MajorCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "MajorCell")
         self.vTitleWrap?.layer.addBottomLine(UIColor(rgba: "#e2e2e2"), width: 1)
         
-//        let answers = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5]
         APIClient.sharedInstance.result(APP_DELEGATE.uCurrentUser!, answer: self.arrAnswer!) { (questions) -> () in
             self.arrMajor = questions
             dispatch_async(dispatch_get_main_queue(), { () -> Void in

@@ -16,13 +16,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bjJ-iB-bnc">
-                        <rect key="frame" x="0.0" y="0.0" width="79" height="79.5"/>
+                        <rect key="frame" x="5" y="5" width="69" height="69.5"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="bjJ-iB-bnc" secondAttribute="height" multiplier="1:1" id="BI3-x7-S7z"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Et-OM-tsK">
-                        <rect key="frame" x="87" y="0.0" width="225" height="55"/>
+                        <rect key="frame" x="82" y="0.0" width="230" height="55"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="55" id="Gjy-3J-vjh"/>
                         </constraints>
@@ -31,7 +31,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GNJ-yl-4fa">
-                        <rect key="frame" x="87" y="57" width="225" height="22.5"/>
+                        <rect key="frame" x="82" y="57" width="230" height="22.5"/>
                         <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
                         <color key="textColor" red="0.21960784310000001" green="0.57647058819999997" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -43,10 +43,10 @@
                     <constraint firstItem="9Et-OM-tsK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="KZT-75-beM"/>
                     <constraint firstAttribute="bottom" secondItem="GNJ-yl-4fa" secondAttribute="bottom" id="KrC-LU-fhD"/>
                     <constraint firstAttribute="trailing" secondItem="9Et-OM-tsK" secondAttribute="trailing" constant="8" id="LMq-UQ-njn"/>
-                    <constraint firstItem="bjJ-iB-bnc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VoB-g1-b5h"/>
+                    <constraint firstItem="bjJ-iB-bnc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="VoB-g1-b5h"/>
                     <constraint firstAttribute="trailing" secondItem="GNJ-yl-4fa" secondAttribute="trailing" constant="8" id="d0V-Yt-Nba"/>
-                    <constraint firstItem="bjJ-iB-bnc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="njC-sJ-dRo"/>
-                    <constraint firstAttribute="bottom" secondItem="bjJ-iB-bnc" secondAttribute="bottom" id="qDh-5N-iwk"/>
+                    <constraint firstItem="bjJ-iB-bnc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="njC-sJ-dRo"/>
+                    <constraint firstAttribute="bottom" secondItem="bjJ-iB-bnc" secondAttribute="bottom" constant="5" id="qDh-5N-iwk"/>
                     <constraint firstItem="GNJ-yl-4fa" firstAttribute="leading" secondItem="bjJ-iB-bnc" secondAttribute="trailing" constant="8" id="tNy-JH-w7V"/>
                 </constraints>
             </tableViewCellContentView>
