@@ -2,7 +2,8 @@ class CreateQuestions < ActiveRecord::Migration
 
   def up
     create_table :personality_types do |t|
-      t.string :name
+      t.string :name, null: false
+      t.text :description, null: false
       t.timestamps
     end
 

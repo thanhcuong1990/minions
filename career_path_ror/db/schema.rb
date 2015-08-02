@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150801122755) do
+ActiveRecord::Schema.define(version: 20150802003550) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -22,8 +22,19 @@ ActiveRecord::Schema.define(version: 20150801122755) do
 
   add_index "answers", ["user_id"], name: "index_answers_on_user_id", using: :btree
 
+  create_table "careers", force: :cascade do |t|
+    t.string   "name",           limit: 255,   default: "", null: false
+    t.text     "description",    limit: 65535,              null: false
+    t.integer  "personality_id", limit: 4,                  null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "careers", ["name"], name: "index_careers_on_name", using: :btree
+
   create_table "personality_types", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name",        limit: 255,   null: false
+    t.text     "description", limit: 65535, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
