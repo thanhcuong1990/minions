@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :sessions, :only => [:create, :destroy]
       resources :questions, :only => [:index]
       resources :answers, :only => [:create]
+      resources :universities, :only => [:index]
     end
   end
 

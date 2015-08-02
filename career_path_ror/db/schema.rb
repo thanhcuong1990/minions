@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150802003550) do
+ActiveRecord::Schema.define(version: 20150802014713) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "user_id",    limit: 4
@@ -49,6 +49,19 @@ ActiveRecord::Schema.define(version: 20150802003550) do
   end
 
   add_index "questions", ["content"], name: "index_questions_on_content", unique: true, using: :btree
+
+  create_table "universities", force: :cascade do |t|
+    t.string  "name",        limit: 255,   default: "", null: false
+    t.text    "description", limit: 65535,              null: false
+    t.string  "website",     limit: 255,                null: false
+    t.string  "image_url",   limit: 255,                null: false
+    t.integer "r_ranking",   limit: 4
+    t.integer "i_ranking",   limit: 4
+    t.integer "a_ranking",   limit: 4
+    t.integer "s_ranking",   limit: 4
+    t.integer "e_ranking",   limit: 4
+    t.integer "c_ranking",   limit: 4
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name",                limit: 255, default: "", null: false
