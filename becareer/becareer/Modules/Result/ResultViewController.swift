@@ -36,6 +36,7 @@ class ResultViewController: BaseViewController {
         self.tblMajors?.registerNib(UINib(nibName: "MajorCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "MajorCell")
         self.vTitleWrap?.layer.addBottomLine(UIColor(rgba: "#e2e2e2"), width: 1)
         
+//        let answers = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5,1, 2, 3, 4, 5]
         APIClient.sharedInstance.result(APP_DELEGATE.uCurrentUser!, answer: self.arrAnswer!) { (questions) -> () in
             self.arrMajor = questions
             dispatch_async(dispatch_get_main_queue(), { () -> Void in
@@ -63,8 +64,7 @@ extension ResultViewController:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(self.arrMajor?.count > 0){
-            return 0
-//            return (self.arrMajor[section] as? NSDictionary)
+            return self.arrMajor![advance(self.arrMajor!.startIndex, section)].objectForKey("careers")!.count
         }
         return 0
     }
@@ -73,14 +73,21 @@ extension ResultViewController:UITableViewDataSource,UITableViewDelegate{
         return 44
     }
     
+    func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return self.arrMajor![advance(self.arrMajor!.startIndex, section)].objectForKey("type")?.objectForKey("name") as? String
+    }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("MajorCell", forIndexPath: indexPath) as! MajorCell
-        cell.lblTitle?.text = "Major"
+        var arrCareers = self.arrMajor![advance(self.arrMajor!.startIndex, indexPath.section)].objectForKey("careers") as? Array<NSDictionary>
+        cell.lblTitle?.text = arrCareers![advance(arrCareers!.startIndex, indexPath.row)].objectForKey("name") as? String
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let vcSuggestion = StoryboardManager.sharedInstance.getInitialViewController(Storyboard.Suggestion) as! SuggestionViewController
+        var arrCareers = self.arrMajor![advance(self.arrMajor!.startIndex, indexPath.section)].objectForKey("careers") as? Array<NSDictionary>
+        vcSuggestion.iMajorId = arrCareers![advance(arrCareers!.startIndex, indexPath.row)].objectForKey("id") as? Int
         self.navigationController?.pushViewController(vcSuggestion, animated: true)
     }
 }
