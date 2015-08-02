@@ -16,6 +16,7 @@ struct URL{
     static let Register = "/sessions"
     static let Questions = "/questions"
     static let Result   =  "/answers"
+    static let Universities = "/universities"
 }
 
 // MARK: Storyboard

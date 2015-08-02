@@ -11,6 +11,9 @@ import UIKit
 class SuggestionViewController: BaseViewController {
 
     @IBOutlet weak var tblUniversities: UITableView?
+    
+    var iMajorId:Int?
+    var arrUniversities:Array<NSDictionary>?
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpBackButton()
@@ -18,6 +21,10 @@ class SuggestionViewController: BaseViewController {
         self.navigationItem.title = NSLocalizedString("suggestion", comment: "")
         
         self.tblUniversities?.registerNib(UINib(nibName: "UniversityCell", bundle: NSBundle.mainBundle()), forCellReuseIdentifier: "UniversityCell")
+        
+        APIClient.sharedInstance.universities(APP_DELEGATE.uCurrentUser!, majorId: self.iMajorId!) { (universities) -> () in
+            self.arrUniversities = universities
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,7 +46,10 @@ extension SuggestionViewController:UITableViewDataSource,UITableViewDelegate{
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if(self.arrUniversities?.count > 0){
+            return self.arrUniversities!.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -48,9 +58,9 @@ extension SuggestionViewController:UITableViewDataSource,UITableViewDelegate{
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("UniversityCell", forIndexPath: indexPath) as! UniversityCell
-        cell.lblName?.text = "University"
-        cell.lblWebsite?.text = "http://vnexpress.net"
-        cell.imgUniversity?.sd_setImageWithURL(NSURL(string: ""), placeholderImage: UIImage(named: "logo"))
+        cell.lblName?.text = self.arrUniversities![advance(self.arrUniversities!.startIndex, indexPath.row)].objectForKey("name") as? String
+        cell.lblWebsite?.text = self.arrUniversities![advance(self.arrUniversities!.startIndex, indexPath.row)].objectForKey("website") as? String
+        cell.imgUniversity?.sd_setImageWithURL(NSURL(string: (self.arrUniversities![advance(self.arrUniversities!.startIndex, indexPath.row)].objectForKey("imag_url") as! String)), placeholderImage: UIImage(named: "logo"))
         return cell
     }
     
