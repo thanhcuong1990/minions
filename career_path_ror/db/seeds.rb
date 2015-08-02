@@ -9,12 +9,12 @@
 puts "Seeding data..."
 if PersonalityType.count <= 0
   puts "Seeding personality types..."
-  PersonalityType.create(name: "Realistic")
-  PersonalityType.create(name: "Investigative")
-  PersonalityType.create(name: "Artistic")
-  PersonalityType.create(name: "Social")
-  PersonalityType.create(name: "Enterprising")
-  PersonalityType.create(name: "Conventional")
+  PersonalityType.create(name: "Realistic", description: "R (Realistic - Kỹ thuật). Người thuộc nhóm tính cách này thích hành động hơn là suy nghĩ hay nghiên cứu các lý thuyết trừu tượng. Giỏi giải quyết những việc đòi hỏi sự khéo léo của đôi bàn tay, phối hợp giữa các kỹ năng và thao tác vận động. Các phương thức giải quyết công việc thường đơn giản, dễ áp dụng và đạt được hiệu quả cụ thể. Có xu hướng quan tâm đến cơ khí, xây dựng, thích làm việc với các công cụ, máy móc, thiết bị. Thích môi trường làm việc gắn với thiên nhiên, xa bàn giấy.")
+  PersonalityType.create(name: "Investigative", description: "I - Investigative (Nghiên cứu): Những người thuộc nhóm tính cách này thường thích suy nghĩ, quan sát hơn là hành động. Thông minh và có khả năng giải quyết các vấn đề khoa học. Thích và có khả năng tìm tòi, nghiên cứu những quy luật trong tự nhiên và đời sống xã hội. Độc lập sáng tạo, có tư duy phản biện, lật lại vấn đề. Thích trầm tư suy nghĩ hơn là tham gia các công tác xã hội sôi nổi. Tự tổ chức công việc của mình rất tốt, thường lập kế hoạch và thực hiện theo đúng kế hoạch đã đề ra, cũng bởi vì có tính kiên trì, tỉ mỉ và ngăn nắp.")
+  PersonalityType.create(name: "Artistic", description: "A - Artistic (Nghệ thuật - nghệ sỹ): Nhóm người này có tính cách cởi mở, sáng tạo, nhạy cảm và giàu cảm xúc cùng với trí tưởng tượng phong phú. Không thích những khuôn mẫu, những nguyên tắc mà thích có sự độc đáo và riêng biệt. Có khả năng biểu đạt tình cảm của mình, thích được tham gia vào các hoạt động của con người, đặc biệt trong lĩnh vực văn hóa, nghệ thuật.")
+  PersonalityType.create(name: "Social", description: "S – Social (Xã hội):Thích giúp đỡ người khác với tinh thần thiện nguyện, luôn mong muốn một xã hội tốt đẹp hơn. Biết lắng nghe một cách tích cực, biết giảng giải, huấn luyện cho mọi người. Thường tìm đọc các cuốn sách nhằm hoàn thiện bản thân. Thường tránh các công việc phải sử dụng máy móc, thiết bị, hay những công việc bàn giấy, đơn giản vì lý do các công việc đó không có nhiều cơ hội tiếp xúc, giao tiếp với mọi người.")
+  PersonalityType.create(name: "Enterprising", description: "E - Enterprise (Người dám nghĩ dám làm - tiềm năng lãnh đạo): Đặc điểm nổi bật của nhóm tính cách này là sự tự tin, mạnh mẽ, thích phiêu lưu mạo hiểm, thích công việc có nhiều áp lực, có sự cạnh tranh. Có khả năng ăn nói và thuyết phục mọi người. Là người nhiều năng lượng, tham vọng nhưng cũng rất hòa đồng và thích giao du. Thường thành công khi tham gia làm kinh doanh, lãnh đạo hay làm chính trị.")
+  PersonalityType.create(name: "Conventional", description: "C - Conventional (Mẫu người công chức - văn phòng): Những người thuộc nhóm tính cách này thường rất tin cậy do tính cẩn thận, tỉ mỉ, ngăn nắp. Thường đúng hẹn, luôn tuân thủ quy định, quy trình, coi trọng truyền thống, ứng xử chừng mực, ôn hòa. Thích làm việc với các con số, quản lý hồ sơ, sử dụng các thiết bị văn phòng. Thường giải quyết tốt các công việc khi đã được lập kế hoạch.")
 end
 
 if Question.count <= 0

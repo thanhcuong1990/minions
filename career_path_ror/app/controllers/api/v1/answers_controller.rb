@@ -17,7 +17,6 @@ class Api::V1::AnswersController < ApiController
       e = value_of(answers[40..49])
       c = value_of(answers[50..59])
       list_answer = [r, i, a, s, e, c]
-      p list_answer
       max_1 = list_answer.rindex(list_answer.max)
       max_value_1 = list_answer[max_1]
 
@@ -27,17 +26,20 @@ class Api::V1::AnswersController < ApiController
       max_value_2 = list_answer_2[max_2]
 
       data = {}
+      type_1 = type(max_1)
+      majors_1 = Career.select(:id, :name, :description).where(personality_id: type_1.id)
+
       if  max_value_2 >= 5.0
-        majors_1 = {"majors": ["Nghe 1", "Nghe 2", "Nghe 3"]}
-        majors_2 = {"majors": ["Nghe 4", "Nghe 5", "Nghe 6"]}
-        data = {"results": [majors_1, majors_2]}
+        type_2 = type(max_2)
+        majors_2 = Career.select(:id, :name, :description).where(personality_id: type_2.id)
+        data = {"results": [ {type: type_1, "careers": majors_1}, {type: type_2, "careers": majors_2}]}
       else
-        data = {"results": [type: type(max_1)]}
+        data = {"results": [ {type: type_1, "careers": majors_1}]}
       end
 
       response_success_with_data(data)
     else
-      response_error("xx", 123)
+      response_error("Your answers not valid", 1009)
     end
   end
 
@@ -71,17 +73,17 @@ class Api::V1::AnswersController < ApiController
     type = nil
     case value
     when 0
-      type = PersonalityType.select(:id, :name).find_by(name: "Realistic")
+      type = PersonalityType.select(:id, :name, :description).find_by(name: "Realistic")
     when 1
-      type = PersonalityType.select(:id, :name).find_by(name: "Investigative")
+      type = PersonalityType.select(:id, :name, :description).find_by(name: "Investigative")
     when 2
-      type = PersonalityType.select(:id, :name).find_by(name: "Artistic")
+      type = PersonalityType.select(:id, :name, :description).find_by(name: "Artistic")
     when 3
-      type = PersonalityType.select(:id, :name).find_by(name: "Social")
+      type = PersonalityType.select(:id, :name, :description).find_by(name: "Social")
     when 4
-      type = PersonalityType.select(:id, :name).find_by(name: "Enterprising")
+      type = PersonalityType.select(:id, :name, :description).find_by(name: "Enterprising")
     when 5
-      type = PersonalityType.select(:id, :name).find_by(name: "Conventional")
+      type = PersonalityType.select(:id, :name, :description).find_by(name: "Conventional")
     end
     type
   end

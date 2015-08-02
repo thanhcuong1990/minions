@@ -33,7 +33,8 @@ ActiveRecord::Schema.define(version: 20150802003550) do
   add_index "careers", ["name"], name: "index_careers_on_name", using: :btree
 
   create_table "personality_types", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name",        limit: 255,   null: false
+    t.text     "description", limit: 65535, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
