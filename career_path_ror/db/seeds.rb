@@ -125,4 +125,56 @@ if Career.count <= 0
   Career.create(name: "Các ngành nghề liên quan", description: "Phát triển phần mềm, biên dịch, phiên dịch, giáo viên mầm non, một số vị trí công chức nhà nước, thanh tra, kiểm tra, nghề thợ thủ công.", personality_id: 6)
 end
 
+if University.count <= 0
+  puts "Seeding universities..."
+
+  University.create(name: "Học viện Công nghệ Bưu chính Viễn thông cơ sở phía Nam", description: "", website: "http://www.ptit.edu.vn/wps/portal", careers: [2, 8, 11, 21, 28], r_ranking: 60, i_ranking: 40, a_ranking: 0, s_ranking: 0, e_ranking: 50, c_ranking: 60)
+  University.create(name: "Học viện Hàng không Việt Nam", description: "", website: "http://www.vaa.edu.vn/", image_url: "http://i.imgur.com/2SfKxux.png", careers: [2, 8, 20, 21, 24, 26, 28], r_ranking: 40, i_ranking: 30, a_ranking: 40, s_ranking: 65, e_ranking: 70, c_ranking: 50)
+
+  University.create(name: "Học viện Hành chính cơ sở phía Nam", description: "", website: "http://www.napa.vn/", image_url: "http://i.imgur.com/TdtQPnb.png", careers: [11, 15, 17, 20, 21, 22, 23, 24, 25, 26, 27, 28], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+
+  University.create(name: "Học viện Kỹ thuật Mật mã cơ sở phía Nam", description: "", website: "http://actvn.edu.vn", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+
+  University.create(name: "Nhạc viện Thành phố Hồ Chí Minh", description: "", website: "http://hcmcons.vn/vi/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH An ninh Nhân dân", description: "", website: "", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Bách khoa, ĐHQG Tp.HCM", description: "", website: "http://www.hcmut.edu.vn/vi", image_url: "http://i.imgur.com/GBH5weI.jpg", careers: [1, 2, 3, 4, 5, 6, 7, 8], r_ranking: 90, i_ranking: 90, a_ranking: 10, s_ranking: 20, e_ranking: 50, c_ranking: 90)
+  University.create(name: "Trường ĐH Công nghiệp TP.HCM", description: "", website: "http://www.iuh.edu.vn/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Công nghệ Sài Gòn", description: "", website: "http://www.stu.edu.vn/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Công nghệ thông tin Gia Định", description: "", website: "http://www.giadinh.edu.vn/", image_url: "", careers: [8, 27, 28], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Công nghệ Thông tin, ĐHQG Tp.HCM", description: "", website: "http://www.uit.edu.vn/", image_url: "http://i.imgur.com/xRmDqng.png", careers: [ 8, 27, 28], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Công nghệ TP.HCM (HUTECH)", description: "", website: "http://www.hutech.edu.vn/", image_url: "http://i.imgur.com/S8Vz4RA.jpg", careers: [1, 2, 3, 4, 5, 6, 8, 28], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Cảnh sát Nhân dân", description: "", website: "http://www.pup.edu.vn/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Dân lập Văn Lang", description: "", website: "http://www.vanlanguni.edu.vn/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH FPT", description: "", website: "http://www.fpt.edu.vn/", image_url: "http://i.imgur.com/3ZPJkR4.jpg", careers: [8, 27, 28], r_ranking: 60, i_ranking: 60, a_ranking: 1, s_ranking: 1, e_ranking: 50, c_ranking: 70)
+  University.create(name: "Trường ĐH Giao thông Vận tải - cơ sở 2 phía Nam", description: "", website: "http://www.uct2.edu.vn/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Giao thông Vận tải TP.HCM", description: "", website: "http://www.hcmutrans.edu.vn/", image_url: "", careers: [1, 5, 8, 20, 26], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Hoa Sen", description: "", website: "http://www.hoasen.edu.vn/", image_url: "", careers: [1, 2, 3, 4, 5, 6, 8, 20, 21, 22, 27, 28], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Khoa học Tự nhiên, ĐHQG Tp.HCM", description: "", website: "http://www.hcmus.edu.vn/", image_url: "http://www.hcmus.edu.vn/images/stories/logo-khtn2009_transparency.png", careers: [1, 2, 3, 4, 5, 6, 7, 8, 28], r_ranking: 85, i_ranking: 70, a_ranking: 0, s_ranking: 0, e_ranking: 1, c_ranking: 85)
+  University.create(name: "Trường ĐH Khoa học Xã hội và Nhân văn, ĐHQG Tp.HCM", description: "", website: "http://www.hcmussh.edu.vn/", image_url: "http://hcmussh.edu.vn/Resources/Images/HomePage/Logo%20USSH%20_Camrial.jpg", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Kinh tế - Luật, ĐHQG Tp.HCMTrường ĐH Kinh tế - Tài chính TP.HCM", description: "", website: "http://www.uel.edu.vn/", image_url: "http://www2.uel.edu.vn/Resources/Images/Doanthanhnien/DOAN%20-%20HOI%202013/Logo/Logo%20UEL.png", careers: [20, 21, 22, 23, 24, 25], r_ranking: 50, i_ranking: 70, a_ranking: 10, s_ranking: 70, e_ranking: 80, c_ranking: 1)
+  University.create(name: "Trường ĐH Kinh tế - Tài chính TP.HCM", description: "", website: "http://www.uef.edu.vn/", image_url: "", careers: [20, 21, 22, 23, 25, 26], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Kinh tế TP.HCM", description: "", website: "http://www.ueh.edu.vn/", image_url: "https://upload.wikimedia.org/wikipedia/vi/9/9a/Logo_Tr%C6%B0%E1%BB%9Dng_%C4%90H_Kinh_t%E1%BA%BF_Tp.HCM.jpg", careers: [20, 21, 22, 23, 25, 26], r_ranking: 1, i_ranking: 1, a_ranking: 50, s_ranking: 50, e_ranking: 80, c_ranking: 40)
+  University.create(name: "Trường ĐH Kiến trúc TP.HCM", description: "", website: "http://www.uah.edu.vn/", image_url: "", careers: [10, 11, 13, 14], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Lao động - Xã hội (cơ sở 2 TP.HCM)", description: "", website: "http://ldxh.edu.vn/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Luật TP.HCM", description: "", website: "http://www.hcmulaw.edu.vn/", image_url: "", careers: [22, 23, 25, 26], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Mỹ thuật TP.HCM", description: "", website: "http://www.hcmufa.edu.vn/", image_url: "", careers: [11, 12, 13, 14], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Ngoại ngữ - Tin học TP.HCM", description: "", website: "http://www.huflit.edu.vn/home/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Ngoại thương cơ sỏ phía Nam", description: "", website: "http://www.ftu.edu.vn/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Ngân hàng TP.HCM", description: "", website: "http://www.buh.edu.vn/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Nông Lâm TP.HCM", description: "", website: "http://www.hcmuaf.edu.vn/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Quốc tế RMIT Việt Nam", description: "", website: "http://www.rmit.edu.vn/", image_url: "http://www.gday.edu.vn//uploads/News_6_2011/RMIT-logo%201.jpg", careers: [1, 2, 3, 4, 8, 27, 28], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Quốc tế, ĐHQG Tp.HCM", description: "", website: "http://www.hcmiu.edu.vn/", image_url: "http://www.hcmiu.edu.vn/Portals/1/Skins/IU%20New/images/v_logo.png", careers: [1, 2, 3, 5, 7, 20, 22, 23, 27, 28], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Sài Gòn", description: "", website: "http://www.sgu.edu.vn/index.php", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Sân khấu, Điện ảnh TP.HCM", description: "", website: "http://skdahcm.edu.vn/", image_url: "", careers: [], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Sư phạm Kỹ thuật TP.HCM", description: "", website: "http://hcmute.edu.vn/", image_url: "", careers: [1, 2, 3, 4, 5, 6, 7, 8, 27, 28], r_ranking: 70, i_ranking: 70, a_ranking: 1, s_ranking: 1, e_ranking: 50, c_ranking: 70)
+  University.create(name: "Trường ĐH Sư phạm TP.HCM", description: "", website: "http://www.hcmup.edu.vn/", image_url: "", careers: [1, 2, 3, 4, 5, 6, 7, 8, 15, 16, 17, 19, 27, 28], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+  University.create(name: "Trường ĐH Tài nguyên - Môi trường TP.HCM", description: "", website: "http://www.hcmunre.edu.vn/hcmunre/trang-chu/index", image_url: "", careers: [16, 17, 18, 19], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+
+  University.create(name: "Trường ĐH Văn hóa TP.HCM", description: "", website: "http://www.hcmuc.edu.vn/", image_url: "", careers: [11, 12, 13, 14, 15, 16, 17 ], r_ranking: 10, i_ranking: 10, a_ranking: 40, s_ranking: 80, e_ranking: 1, c_ranking: 10)
+
+  University.create(name: "Trường ĐH Y Dược TP.HCM", description: "", website: "http://www.yds.edu.vn/", image_url: "http://tuyensinh.uel.edu.vn/Resources/Images/SubDomain/tuyensinh/891724_361280103977896_1325538060_o.jpg", careers: [9, 15, 16, 17, 18, 19], r_ranking: 70, i_ranking: 80, a_ranking: 1, s_ranking: 80, e_ranking: 70, c_ranking: 70)
+  University.create(name: "Trường ĐH Y khoa Phạm Ngọc Thạch", description: "", website: "http://pnt.edu.vn/vi/", image_url: "", careers: [9, 15, 16, 17, 18, 19], r_ranking: 1, i_ranking: 1, a_ranking: 1, s_ranking: 1, e_ranking: 1, c_ranking: 1)
+
+end
+
 puts "Seeding completed."
