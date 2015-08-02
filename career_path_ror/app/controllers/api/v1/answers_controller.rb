@@ -1,7 +1,7 @@
 class Api::V1::AnswersController < ApiController
 
   def create
-    results = JSON.parse(params[:results])
+    results = params[:results]
     if results.count == Question.all.size
       answer = Answer.find_by(user_id: current_user.id)
       if answer.nil?
