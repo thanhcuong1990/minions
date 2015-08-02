@@ -41,6 +41,7 @@
                                     </tableView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="D9l-Lm-mrE" secondAttribute="trailing" id="0dw-cG-2Bs"/>
                                     <constraint firstItem="D9l-Lm-mrE" firstAttribute="top" secondItem="22U-77-aNo" secondAttribute="top" id="5cs-dl-UZU"/>
@@ -50,6 +51,10 @@
                                     <constraint firstItem="2ZP-M4-8ar" firstAttribute="leading" secondItem="22U-77-aNo" secondAttribute="leading" id="kuR-rS-6kL"/>
                                     <constraint firstAttribute="bottom" secondItem="2ZP-M4-8ar" secondAttribute="bottom" id="wbu-wt-Yjv"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="x5u-e8-zsp" appends="YES" id="kox-zg-7ey"/>
+                                    <outletCollection property="gestureRecognizers" destination="AdE-wC-lre" appends="YES" id="HqP-JM-ecu"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -70,6 +75,16 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="igS-gc-OAF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="left" id="x5u-e8-zsp">
+                    <connections>
+                        <action selector="swipeLeftQuestion:" destination="C60-0Y-EuO" id="goT-Qk-xxF"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="right" id="AdE-wC-lre">
+                    <connections>
+                        <action selector="swipeRightQuestion:" destination="C60-0Y-EuO" id="vGe-bB-fVU"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="302" y="363"/>
         </scene>

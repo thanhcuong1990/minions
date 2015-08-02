@@ -50,6 +50,7 @@ class QuestionsViewController: BaseViewController {
         if(self.iCurrentQuestion > 0){
             
             self.iCurrentQuestion--
+            self.tvQuestion?.text = (self.arrQuestion[self.iCurrentQuestion] as NSDictionary).objectForKey("content") as! String
             self.tbvAnswers?.reloadData()
             self.vWrap?.layer.addPushLeftAnimation()
             self.navigationItem.title = NSLocalizedString("questions", comment: "").stringByAppendingString(" \(iCurrentQuestion + 1)")
@@ -136,4 +137,15 @@ extension QuestionsViewController:UITableViewDelegate, UITableViewDataSource{
         }
         self.tbvAnswers?.reloadData()
     }
+    
+    //MARK: IBActions
+    
+    @IBAction func swipeLeftQuestion(sender: AnyObject) {
+        self.nextButtonClick(sender)
+    }
+    
+    @IBAction func swipeRightQuestion(sender: AnyObject) {
+        self.popViewController(sender)
+    }
+    
 }
