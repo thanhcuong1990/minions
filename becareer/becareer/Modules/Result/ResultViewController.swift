@@ -22,8 +22,8 @@ class ResultViewController: BaseViewController {
     var arrMajor:Array<NSDictionary>?
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.navigationItem.hidesBackButton = true
+        self.setUpHomeButton()
+        
         self.navigationItem.title = NSLocalizedString("result", comment: "")
         
         self.lblTitleName?.text = NSLocalizedString("name", comment: "")

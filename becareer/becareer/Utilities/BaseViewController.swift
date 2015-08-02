@@ -35,6 +35,19 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController{
     
+    func setUpHomeButton(){
+        var cgrNavigationBar = self.navigationController?.navigationBar.frame.size;
+        var btnLeft = UIButton(frame: CGRectMake(0, cgrNavigationBar!.height/10, cgrNavigationBar!.width/10, cgrNavigationBar!.height/1.5))
+        btnLeft.imageEdgeInsets = UIEdgeInsets(top: -2.5, left: 0, bottom: 2.5, right: 0)
+        btnLeft.imageView?.contentMode = UIViewContentMode.ScaleAspectFit
+        btnLeft.setImage(UIImage(named: "home"), forState: .Normal)
+        btnLeft.setImage(UIImage(named: "home_black"), forState: .Highlighted)
+        btnLeft.addTarget(self, action: "popToRootViewController:", forControlEvents: .TouchUpInside)
+        var bbiLeft = UIBarButtonItem(customView: btnLeft)
+        
+        self.navigationItem.leftBarButtonItems = [self.negativeBarButton(-10),bbiLeft]
+    }
+    
     func setUpBackButton(){
         var cgrNavigationBar = self.navigationController?.navigationBar.frame.size;
         var btnLeft = UIButton(frame: CGRectMake(0, cgrNavigationBar!.height/10, cgrNavigationBar!.width/10, cgrNavigationBar!.height/1.5))
@@ -73,5 +86,9 @@ extension BaseViewController{
     
     func nextButtonClick(sender:AnyObject){
         
+    }
+    
+    func popToRootViewController(sender:AnyObject){
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 }
