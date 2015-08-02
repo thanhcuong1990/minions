@@ -87,4 +87,42 @@ if Question.count <= 0
   Question.create(content: "Gặp gỡ & chào hỏi", personality_id: 6)
 end
 
+if Career.count <= 0
+  puts "Seeding career..."
+
+  Career.create(name: "Cơ khí & Xây dựng", description: "Kỹ sư cơ khí, chế tạo máy, luyện kim, điện lạnh, xây dựng, giao thông, thủy lợi, trắc địa, mỏ, địa chất, dầu khí, vận tải, hàng hải.", personality_id: 1)
+  Career.create(name: "Điện, điện tử", description: "Kỹ sư điện, điện tử, phần cứng máy tính, viễn thông, tự động hóa.", personality_id: 1)
+  Career.create(name: "Thiên nhiên & Nông nghiệp", description: "Kỹ sư nông nghiệp, lâm nghiệp, thủy sản, bác sỹ thú y.", personality_id: 1)
+  Career.create(name: "Quân sự, thể thao và các dịch vụ bảo vệ", description: "Kỹ thuật quân sự, an ninh, vận động viên, huấn luyện viên, giám sát phòng cháy, chữa cháy, giám sát chất lượng, an toàn lao động.", personality_id: 1)
+  Career.create(name: "Các nghề thợ", description: "Thợ sơn, thợ xây dựng, đúc, hàn, mộc, sửa chữa điện, điện tử, lái xe.", personality_id: 1)
+  Career.create(name: "Các ngành nghề liên quan khác", description: "Kỹ thuật trong y học, vật lý trị liệu, kiến trúc sư, khí tượng thủy văn, hải dương học, dược, đầu bếp.", personality_id: 1)
+
+  Career.create(name: "Nghiên cứu khoa học", description: "Nhà toán học, nhà vật lý học, nhà thiên văn học, nhà hóa học, nhà sinh vật học, sinh thái học (động vật, thực vật, thổ nhưỡng, nông học, lâm học, bệnh học thủy sản, thú y, bệnh học cây trồng).", personality_id: 2)
+  Career.create(name: "Kỹ thuật công nghệ", description: "Công nghệ thông tin, công nghệ sinh học, khoa học môi trường , khí tượng thủy văn, hải dương học, nhà nghiên cứu địa lý, địa chất, nghiên cứu xây dựng, nghiên cứu vật liệu mới, chuyên gia dinh dưỡng, kỹ sư hóa thực phẩm (công nghệ thực phẩm).", personality_id: 2)
+  Career.create(name: "Y khoa", description: "Bác sỹ (nhi khoa, đa khoa, nha khoa, phẫu thuật / chỉnh hình, tâm thần), dược sỹ, y học cổ truyền.", personality_id: 2)
+  Career.create(name: "Các ngành nghề liên quan", description: "Khoa học xã hội (nhà tâm lý học, nhà ngôn ngữ học, nhà xã hội học, đô thị học, nhà sử học, khảo cổ học, nhà nhân học, nhà văn hóa, Việt Nam học, quốc tế học, chính trị học, triết học), luật sư, an ninh điều tra, giám định pháp y, nhà kinh tế học, phân tích tài chính, nghiên cứu thị trường, thống kê dự báo, nghiên cứu và quy hoạch đô thị (kiến trúc sư).", personality_id: 2)
+
+  Career.create(name: "Viết & Truyền thông", description: "Nhà văn, nhà thơ, nhà báo (phóng viên, biên tập viên, bình luận viên), nhạc sỹ, nhà lý luận phê bình: văn học, âm nhạc, điện ảnh; người sáng tác quảng cáo, tiếp thị, thiết kế mẫu mã hàng hóa, tổ chức triển lãm, sự kiện, thiết kế trưng bày.", personality_id: 3)
+  Career.create(name: "Nghệ thuật biểu diễn", description: "Ca sỹ, diễn viên: điện ảnh,truyền hình, sân khấu; diễn viên múa, biên đạo múa, biểu diễn nhạc cụ, chỉ huy dàn nhạc, đạo diễn, chỉ đạo nghệ thuật, dẫn chương trình, phát thanh viên.", personality_id: 3)
+  Career.create(name: "Nghệ thuật hình ảnh & Tạo hình", description: "Hội họa (họa sỹ), nhà mỹ thuật, điêu khắc, đồ họa vi tính, nhiếp ảnh gia, thiết kế thời trang, kiến trúc sư, thiết kế nội thất, ngoại thất, thiết kế phong cảnh.", personality_id: 3)
+  Career.create(name: "Các ngành nghề liên quan", description: "Nghệ thuật ẩm thực, quay phim, bảo tồn, bảo tàng, thủ công mỹ nghệ.", personality_id: 3)
+
+  Career.create(name: "Khoa học xã hội", description: "Nhà tâm lý học, nhà ngôn ngữ học, nhà xã hội học, đô thị học, nhà sử học, khảo cổ học, nhà nhân học, nhà văn hóa, Việt Nam học, quốc tế học, chính trị học, triết học.", personality_id: 4)
+  Career.create(name: "Tư vấn & Giúp đỡ", description: "Công tác xã hội, công tác đoàn, hội, cứu trợ xã hội, tình nguyện viên, chăm sóc trẻ em, người già, người khuyết tật, bị thương, nhân viên phục vụ, chăm sóc khách hàng.", personality_id: 4)
+  Career.create(name: "Giáo dục & Đào tạo", description: "Tư vấn hướng nghiệp, tư vấn giáo dục, tư vấn tâm lý, giáo viên, giảng viên, đào tạo các kiến thức, kỹ năng cho người lao động, an toàn lao động, huấn luyện viên thể thao.", personality_id: 4)
+  Career.create(name: "Dịch vụ chăm sóc sức khỏe", description: "Bác sỹ, y tá, điều dưỡng, chuyên viên vật lý trị liệu, y tế công cộng, y tế học đường, y học dự phòng, hộ sinh, dinh dưỡng học…", personality_id: 4)
+  Career.create(name: "Các ngành nghề liên quan", description: "Tôn giáo và tâm linh, thông tin, truyền thông, báo chí, xuất bản, du lịch, quản lý di tích, danh thắng, xã hội học, dịch vụ xã hội.", personality_id: 4)
+
+  Career.create(name: "Quản lý, kinh doanh", description: "Quản trị kinh doanh, quản trị doanh nghiệp, quản lý kinh tế, quản trị nhân sự, đại lý cung cấp các sản phẩm, môi giới chứng khoán, bất động sản, quản trị trung tâm đào tạo / trường học, quản trị công ty du lịch, khách sạn, nhà hàng.", personality_id: 5)
+  Career.create(name: "Marketing và Bán hàng", description: "Nghiên cứu thị trường, tiếp thị, bán hàng, truyền thông, quan hệ công chúng, tổ chức sự kiện.", personality_id: 5)
+  Career.create(name: "Chính trị và Diễn thuyết", description: "Nhà ngoại giao, chính trị gia, diễn giả…", personality_id: 5)
+  Career.create(name: "Luật", description: "Luật sư, trợ lý pháp lý, sỹ quan cảnh sát.", personality_id: 5)
+  Career.create(name: "Các ngành nghề liên quan", description: "Tư vấn tài chính, tín dụng, kế toán trưởng.", personality_id: 5)
+
+  Career.create(name: "Quản trị văn phòng", description: "Quản trị văn phòng, thư ký văn phòng, hành chính, quản lý hồ sơ, nhân viên đánh máy, biên soạn hồ sơ, nhân viên lễ tân, điện thoại viên.", personality_id: 6)
+  Career.create(name: "Tài chính, kế toán, đầu tư", description: "Tài chính, ngân hàng, đầu tư, kế toán, kiểm toán, nhân viên thuế, nhân viên thu ngân, quản lý quỹ, bán lẻ.", personality_id: 6)
+  Career.create(name: "Thư viện, thông tin", description: "Thống kê, lưu trữ, thư viện, hệ thống thông tin.", personality_id: 6)
+  Career.create(name: "Các ngành nghề liên quan", description: "Phát triển phần mềm, biên dịch, phiên dịch, giáo viên mầm non, một số vị trí công chức nhà nước, thanh tra, kiểm tra, nghề thợ thủ công.", personality_id: 6)
+end
+
 puts "Seeding completed."
