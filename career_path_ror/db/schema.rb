@@ -51,10 +51,11 @@ ActiveRecord::Schema.define(version: 20150802014713) do
   add_index "questions", ["content"], name: "index_questions_on_content", unique: true, using: :btree
 
   create_table "universities", force: :cascade do |t|
-    t.string  "name",        limit: 255,   default: "", null: false
-    t.text    "description", limit: 65535,              null: false
-    t.string  "website",     limit: 255,                null: false
-    t.string  "image_url",   limit: 255,                null: false
+    t.string  "name",        limit: 255,   default: "",         null: false
+    t.text    "description", limit: 65535,                      null: false
+    t.string  "website",     limit: 255,   default: "",         null: false
+    t.string  "image_url",   limit: 255,   default: "",         null: false
+    t.string  "careers",     limit: 255,   default: "--- []\n"
     t.integer "r_ranking",   limit: 4
     t.integer "i_ranking",   limit: 4
     t.integer "a_ranking",   limit: 4

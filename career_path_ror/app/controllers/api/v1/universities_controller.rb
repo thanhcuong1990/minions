@@ -1,6 +1,7 @@
 class Api::V1::UniversitiesController < ApiController
   def index
-    questions = Question.all
+    type = params[:type]
+
     response_sucess(questions)
   end
 end
