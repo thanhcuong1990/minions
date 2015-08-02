@@ -50,7 +50,7 @@ extension SuggestionViewController:UITableViewDataSource,UITableViewDelegate{
         let cell = tableView.dequeueReusableCellWithIdentifier("UniversityCell", forIndexPath: indexPath) as! UniversityCell
         cell.lblName?.text = "University"
         cell.lblWebsite?.text = "http://vnexpress.net"
-        cell.imgUniversity?.image = UIImage(named: "logo")
+        cell.imgUniversity?.sd_setImageWithURL(NSURL(string: ""), placeholderImage: UIImage(named: "logo"))
         return cell
     }
     

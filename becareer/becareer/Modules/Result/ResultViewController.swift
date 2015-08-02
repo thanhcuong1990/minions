@@ -55,11 +55,18 @@ class ResultViewController: BaseViewController {
 extension ResultViewController:UITableViewDataSource,UITableViewDelegate{
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        if(self.arrMajor?.count > 0){
+            return self.arrMajor!.count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        if(self.arrMajor?.count > 0){
+            return 0
+//            return (self.arrMajor[section] as? NSDictionary)
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
